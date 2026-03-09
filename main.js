@@ -6,11 +6,11 @@ const LoadData = (id) => {
       disPlayData(data.data, id);
     });
 };
-
+const spin = document.getElementById("spiner");
 const disPlayData = (issues, id = "information") => {
   const dataAddigPlace = document.getElementById(id);
   dataAddigPlace.innerHTML = "";
-
+  spin.classList.remove('hidden');
   issues.forEach((item) => {
     const borderColor =
       item.status === "open" ? "border-green-500" : "border-purple-500";
@@ -69,6 +69,7 @@ const disPlayData = (issues, id = "information") => {
       dataAddigPlace.appendChild(card);
     }
   });
+  spin.classList.add("hidden");
 };
 
 // Open section Making
